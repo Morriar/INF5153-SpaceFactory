@@ -35,13 +35,13 @@ abstract public class AbstractShip implements Ship {
     }
 
     @Override
-    public void loadWaypon(Weapon weapon) {
+    public void loadWeapon(Weapon weapon) {
         System.out.println("Load " + weapon + " into " + this);
         weapons.add(weapon);
     }
 
     @Override
-    public void unloadWaypon(Weapon weapon) {
+    public void unloadWeapon(Weapon weapon) {
         System.out.println("Unload " + weapon + " from " + this);
         weapons.remove(weapon);
     }

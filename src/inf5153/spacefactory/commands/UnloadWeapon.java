@@ -30,7 +30,7 @@ public class UnloadWeapon implements Command {
 
     @Override
     public void execute() {
-        ship.unloadWaypon(weapon);
+        ship.unloadWeapon(weapon);
     }
 
 }

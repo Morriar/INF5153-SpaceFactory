@@ -22,9 +22,9 @@ public interface Ship {
 
     public String getId();
 
-    public void loadWaypon(Weapon weapon);
+    public void loadWeapon(Weapon weapon);
 
-    public void unloadWaypon(Weapon weapon);
+    public void unloadWeapon(Weapon weapon);
 
     public List<Weapon> getWeapons();
 
