@@ -15,6 +15,9 @@
  */
 package inf5153.spacefactory;
 
+import inf5153.spacefactory.commands.CommandList;
+import inf5153.spacefactory.commands.LoadWeapon;
+import inf5153.spacefactory.commands.UnloadWeapon;
 import inf5153.spacefactory.factories.FactoryFactory;
 import inf5153.spacefactory.factories.SpaceFactory;
 import inf5153.spacefactory.ships.Ship;
@@ -32,11 +35,12 @@ public class INF5153SpaceFactory {
         Weapon w1 = weaponFactory.getWeapon("WX-Blaster", "w1");
         Weapon w2 = weaponFactory.getWeapon("WX-Phaser", "w2");
 
-        s1.loadWaypon(w1);
-        s2.loadWaypon(w2);
-
-        System.out.println(s1.getWeapons());
-        System.out.println(s2.getWeapons());
+        CommandList commands = new CommandList();
+        commands.addCommand(new LoadWeapon(s1, w1));
+        commands.addCommand(new LoadWeapon(s1, w2));
+        commands.addCommand(new UnloadWeapon(s1, w2));
+        commands.addCommand(new LoadWeapon(s2, w2));
+        commands.executeCommands();
     }
 
 }
